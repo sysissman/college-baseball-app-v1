@@ -33,6 +33,8 @@ export default function GeneralInput(props) {
   const [wGPAFieldValue, setWGPAFieldValue] = useStateMutationAction("");
   const [hSGradYearFieldValue, setHSGradYearFieldValue] =
     useStateMutationAction("");
+    const [positionValue, setpositionValue] =
+    useStateMutationAction("");
   const buttonOnClick = useDataStoreCreateAction({
     fields: {
       first_name: firstNameFieldValue,
@@ -44,9 +46,13 @@ export default function GeneralInput(props) {
       UGPA: uGPAFieldValue,
       WGPA: wGPAFieldValue,
       HSGradYear: hSGradYearFieldValue,
+      Position: positionValue
     },
     model: User,
   });
+  const SelectFieldControlledExample = () => {
+    const [positionValue, setpositionValue] = React.useState('');
+  }
   return (
     <View
       width="375px"
@@ -498,6 +504,7 @@ export default function GeneralInput(props) {
         children="Position"
         {...getOverrideProps(overrides, "Position")}
       ></Text>
+      
       <SelectField
       
         display="flex"
@@ -517,8 +524,8 @@ export default function GeneralInput(props) {
         variation="quiet"
         aria-selected={user?.Position}
         {...getOverrideProps(overrides, "SelectField")}
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
+        value={positionValue}
+        onChange={(e) => setpositionValue(e.target.value)}
           
   
         >
@@ -533,5 +540,6 @@ export default function GeneralInput(props) {
   
       </SelectField>
     </View>
-  );
+  
+  )
 }
