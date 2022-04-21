@@ -1,0 +1,24 @@
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  first_name: String
+  last_name: String
+  height: String
+  weight: String
+  ACT: String
+  SAT: String
+  UGPA: String
+  WGPA: String
+  HSGradYear: String
+  Position: String
+}
+
+type School @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  location: String
+  division: String
+  conference: String
+  coach: String
+  image_url: String
+}
+ 

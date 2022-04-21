@@ -499,6 +499,7 @@ export default function GeneralInput(props) {
         {...getOverrideProps(overrides, "Position")}
       ></Text>
       <SelectField
+      
         display="flex"
         gap="8px"
         position="absolute"
@@ -509,7 +510,7 @@ export default function GeneralInput(props) {
         height="40px"
         justifyContent="center"
         padding="0px 0px 0px 0px"
-        placeholder="Position"
+        placeholder="Placeholder"
         size="small"
         isDisabled={false}
         labelHidden={true}
@@ -517,18 +518,19 @@ export default function GeneralInput(props) {
         aria-selected={user?.Position}
         {...getOverrideProps(overrides, "SelectField")}
         value={value}
-      onChange={(e) => setValue(e.target.value)}
-        
-
-      >
-      <option value="LHP">LHP</option>
-      <option value="RHP">RHP</option>
-      <option value="1B">1B</option>
-      <option value="2B">2B</option>
-      <option value="3B">3B</option>
-      <option value="SS">SS</option>
-      <option value="OF">OF</option>
-      <option value="C">C</option>
+        onChange={(e) => setValue(e.target.value)}
+          
+  
+        >
+        <option value="LHP">LHP</option>
+        <option value="RHP">RHP</option>
+        <option value="1B">1B</option>
+        <option value="2B">2B</option>
+        <option value="3B">3B</option>
+        <option value="SS">SS</option>
+        <option value="OF">OF</option>
+        <option value="C">C</option>
+  
       </SelectField>
     </View>
   );
